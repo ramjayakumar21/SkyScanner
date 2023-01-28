@@ -29,6 +29,7 @@ jobs:
         pip install flake8 pytest
         sudo apt-get install libzbar0
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        sudo apt-get install qt5-default
     - name: Lint with flake8
       run: |
         # stop the build if there are Python syntax errors or undefined names
@@ -38,3 +39,4 @@ jobs:
     - name: Test output 
       run: |
         python3 src/qr_code.py -i samples/qr_code_uas.png
+        
