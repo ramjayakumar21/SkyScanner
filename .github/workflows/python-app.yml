@@ -37,4 +37,4 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test output 
       run: |
-        pytest
+        python3 src/qr_code.py -i samples/qr_code_uas.png
