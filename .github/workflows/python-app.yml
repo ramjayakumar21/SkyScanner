@@ -28,8 +28,8 @@ jobs:
         python -m pip install --upgrade pip
         pip install flake8 pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; 
-        mkdir ~/lib
-        ln -s $(brew --prefix zbar)/lib/libzbar.dylib ~/lib/libzbar.dylib
+        # mkdir ~/lib
+        # ln -s $(brew --prefix zbar)/lib/libzbar.dylib ~/lib/libzbar.dylib
     - name: Lint with flake8
       run: |
         # stop the build if there are Python syntax errors or undefined names
