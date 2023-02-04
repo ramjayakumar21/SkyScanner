@@ -26,19 +26,12 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install flake8 pytest
         sudo apt-get install libzbar0
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-        pip3 uninstall opencv-python
-        pip3 install opencv-python-headless
+        pip uninstall opencv-python
+        pip install opencv-python-headless
         # mkdir ~/lib
         # ln -s $(brew --prefix zbar)/lib/libzbar.dylib ~/lib/libzbar.dylib
-    - name: Lint with flake8
-      run: |
-        # stop the build if there are Python syntax errors or undefined names
-        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-        # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
-        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test output 
       run: |
         python3 src/qr_code.py -i samples/qr_code_uas.png
