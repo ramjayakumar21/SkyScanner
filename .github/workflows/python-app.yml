@@ -27,7 +27,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         sudo apt-get install libzbar0
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; f
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
         pip install opencv-python-headless
         # mkdir ~/lib
         # ln -s $(brew --prefix zbar)/lib/libzbar.dylib ~/lib/libzbar.dylib
