@@ -29,7 +29,8 @@ jobs:
         pip install flake8 pytest
         sudo apt-get install libzbar0
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-        pip3 list
+        pip3 uninstall opencv-python
+        pip3 install opencv-python-headless
         # mkdir ~/lib
         # ln -s $(brew --prefix zbar)/lib/libzbar.dylib ~/lib/libzbar.dylib
     - name: Lint with flake8
